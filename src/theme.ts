@@ -10,11 +10,26 @@ const theme = extendTheme({
     },
   },
   components: {
-    Button: {
-      defaultProps: {
-        colorScheme: 'blue',
+    Container: {
+      baseStyle: {
+        maxW: 'container.lg',
+        px: [4, 6, 8],
+        py: [4, 6, 8],
       },
     },
+    Button: {
+      baseStyle: {
+        fontWeight: 'medium',
+      },
+      defaultProps: {
+        colorScheme: 'blue',
+        size: 'lg',
+      },
+    },
+  },
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
   },
 })
 

@@ -1,28 +1,30 @@
-import { Box, Flex, Link, Stack } from '@chakra-ui/react'
+import { Box, Container, Flex, Link, HStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <Box bg="white" px={4} borderBottom={1} borderStyle="solid" borderColor="gray.200">
-      <Flex h={16} alignItems="center" justifyContent="space-between">
-        <RouterLink to="/">
-          <Link fontSize="xl" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
-            Portfolio
-          </Link>
-        </RouterLink>
+    <Box bg="white" py={4} shadow="sm" position="sticky" top={0} zIndex={1000}>
+      <Container maxW="container.lg">
+        <Flex justify="space-between" align="center">
+          <RouterLink to="/">
+            <Link fontSize="xl" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
+              Portfolio
+            </Link>
+          </RouterLink>
 
-        <Stack direction="row" spacing={8}>
-          <RouterLink to="/about">
-            <Link>About</Link>
-          </RouterLink>
-          <RouterLink to="/projects">
-            <Link>Projects</Link>
-          </RouterLink>
-          <RouterLink to="/contact">
-            <Link>Contact</Link>
-          </RouterLink>
-        </Stack>
-      </Flex>
+          <HStack spacing={8}>
+            <RouterLink to="/about">
+              <Link _hover={{ color: 'blue.500' }}>About</Link>
+            </RouterLink>
+            <RouterLink to="/projects">
+              <Link _hover={{ color: 'blue.500' }}>Projects</Link>
+            </RouterLink>
+            <RouterLink to="/contact">
+              <Link _hover={{ color: 'blue.500' }}>Contact</Link>
+            </RouterLink>
+          </HStack>
+        </Flex>
+      </Container>
     </Box>
   )
 }
