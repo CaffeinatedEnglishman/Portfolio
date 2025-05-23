@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, Button, VStack, Center } from '@chakra-ui/react'
+import { Box, Container, Heading, Text, Button, VStack, Center, Image } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 
 const Home = () => {
@@ -6,6 +6,22 @@ const Home = () => {
     <Container maxW="container.lg" h="calc(100vh - 80px)" display="flex" alignItems="center" justifyContent="center">
       <Center w="100%">
         <VStack spacing={8} textAlign="center" maxW="800px">
+          <Box
+            borderRadius="full"
+            boxSize="200px"
+            overflow="hidden"
+            boxShadow="xl"
+            border="4px solid"
+            borderColor="gray.100"
+          >
+            <Image
+              src="/PFP.jpg"
+              alt="James Christian Manuel"
+              width="100%"
+              height="100%"
+              objectFit="cover"
+            />
+          </Box>
           <Heading 
             as="h1" 
             size="2xl" 
