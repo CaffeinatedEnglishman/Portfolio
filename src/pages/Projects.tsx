@@ -13,7 +13,7 @@ const ProjectCard = ({ title, description, link }: { title: string; description:
         {title}
       </Heading>
       <Text mb={4}>{description}</Text>
-      <Link href={link} isExternal color="blue.500">
+      <Link href={link} color="blue.500" isExternal>
         View Project →
       </Link>
     </Box>
@@ -44,7 +44,7 @@ const Projects = () => {
       <Heading as="h1" size="xl" mb={8}>
         My Projects
       </Heading>
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}

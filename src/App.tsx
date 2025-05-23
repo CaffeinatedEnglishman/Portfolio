@@ -8,7 +8,7 @@ import About from './pages/About'
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider resetCSS>
       <Router>
         <Box minH="100vh">
           <Navbar />
