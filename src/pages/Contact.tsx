@@ -1,4 +1,4 @@
-import { Container, Heading, VStack, FormControl, FormLabel, Input, Textarea, Button, useToast } from '@chakra-ui/react'
+import { Container, Heading, VStack, FormControl, FormLabel, Input, Textarea, Button, useToast, Box } from '@chakra-ui/react'
 import { useState, FormEvent } from 'react'
 
 const Contact = () => {
@@ -32,12 +32,12 @@ const Contact = () => {
   }
 
   return (
-    <Container maxW="container.md">
-      <VStack spacing={8} align="stretch">
+    <Container maxW="container.md" centerContent>
+      <VStack spacing={8} width="100%" align="stretch">
         <Heading as="h1" size="xl">
           Contact Me
         </Heading>
-        <form onSubmit={handleSubmit}>
+        <Box as="form" onSubmit={handleSubmit} width="100%">
           <VStack spacing={4}>
             <FormControl isRequired>
               <FormLabel>Name</FormLabel>
@@ -47,6 +47,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
+                size="lg"
               />
             </FormControl>
             <FormControl isRequired>
@@ -57,6 +58,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your.email@example.com"
+                size="lg"
               />
             </FormControl>
             <FormControl isRequired>
@@ -74,7 +76,7 @@ const Contact = () => {
               Send Message
             </Button>
           </VStack>
-        </form>
+        </Box>
       </VStack>
     </Container>
   )
